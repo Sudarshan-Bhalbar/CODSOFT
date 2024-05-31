@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Orbitron", sans-serif;
+  scrollbar-width: none;
   /* user-select: none; */
 }
 
@@ -36,11 +37,16 @@
 
 html,
 body {
-  width: clamp(100% ,100vw, 1024px);
+  width: clamp(100%, 100vw, 1024px);
   height: 100vh;
-  background-color: #fafaf8;
+  background-color: #f6f6f6;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  scrollbar-width: thin;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: #363636 transparent;
 }
-
 #navbar {
   width: 100%;
   height: fit-content;
@@ -48,6 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: start;
+  position: fixed;
 }
 
 .nav-iconic-name {
@@ -102,43 +109,157 @@ body {
 
 /* ------------------------------------Home Page ------------------------------------------*/
 
-#home{
+#home {
   width: 100vw;
+  height: 100vh;
   padding: 0rem 5rem;
-  /* background-color: #6d6d6d; */
+  padding-top: 10rem;
+  padding-bottom: 5rem;
 }
-#home h1{
+#home h1 {
   font-family: "Noto Serif Display", serif;
-  line-height: 6rem;
+  line-height: 7rem;
   /* background-color: aqua; */
   letter-spacing: 0.3rem;
   font-size: 7rem;
   font-weight: 300;
   color: #262626;
-  text-align:center;
+  text-align: center;
 }
-#home span{
+#home span {
   font-family: "Noto Serif Display", serif;
 }
-#home span img{
+#home span img {
   margin: 0px 1.5rem;
   /* filter: drop-shadow(0 0.7rem 1rem #b0b0b0); */
 }
-#home p{
+#home p {
   line-height: 4rem;
   letter-spacing: 0.2rem;
   font-weight: 100;
   color: #5d5d5d;
   text-align: center;
 }
-#home p b{
+#home p b {
   font-weight: 900 !important;
   color: #262626 !important;
 }
-/* .home-info-section{
-} */
 
+/* --------------------------------------------- About Section ------------------------------------------ */
 
+#about {
+  /* margin-top: 10rem; */
+  padding: 0rem 5rem;
+  padding-top: 10rem;
+  height: 200vh;
+}
+
+.about-title {
+  text-align: end;
+  font-size: 13rem;
+  font-family: "Noto Serif Display", serif;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+  color: #262626;
+}
+.about-title span {
+  font-size: 9rem;
+  font-family: "Noto Serif Display", serif;
+}
+.about-info-section {
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 2rem;
+  background-color: #e7e7e7;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.Image-section {
+  width: fit-content;
+  height: fit-content;
+  background-color: #363636;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.Image-section img {
+  width: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+.info-section {
+  width: calc(100% - 200px);
+  height: 100%;
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+}
+.info-section h2 {
+  color: #363636;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.info-section p {
+  color: #262626;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0rem;
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+.info-section p b {
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ------------------------------------------------ Project Section -----------------------------------------*/
+#project {
+  width: 100vw;
+  height: 100vh;
+  padding: 10rem 5rem;
+}
+#project h1 {
+  font-family: "Noto Serif Display", serif;
+  letter-spacing: 0.5rem;
+  text-align: left;
+  font-size: 12rem;
+  line-height: 10rem;
+  font-weight: 300;
+}
+#project h1 span {
+  font-family: "Noto Serif Display", serif;
+  font-size: 7rem;
+}
+.project-section {
+  margin-top: 8rem;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 700px);
+  grid-row-gap: 10rem;
+}
+
+.div1 {
+  grid-column: span 3;
+  background-color: #d1d1d1 !important;
+}
+.div2 {
+  grid-column: 3 / span 3;
+  background-color: #d1d1d1 !important;
+}
+.div3 {
+  grid-column: span 3;
+  background-color: #d1d1d1 !important;
+}
+.project-section div {
+  background-color: #f6f6f6;
+}
 
 /* ----------------- Responsiveness Section -------------------- */
 @media only screen and (max-width: 1351px) {
@@ -154,5 +275,47 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
+  }
+  #home h1 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    letter-spacing: 0rem;
+  }
+  #home h1 img {
+    width: 80px;
+  }
+  #home p {
+    line-height: 1rem;
+    letter-spacing: 0.2rem;
+    font-weight: 100;
+    color: #5d5d5d;
+    text-align: center;
+    font-size: 0.6rem;
+    margin-top: 3rem;
+  }
+  #about {
+    padding-top: 0rem;
+    padding: 0rem 2rem;
+  }
+  .about-title {
+    font-size: 3rem;
+    text-align: start;
+    letter-spacing: 0rem;
+    margin-bottom: 4rem;
+  }
+  .about-title span {
+    font-size: 4rem;
+  }
+  .about-info-section {
+    flex-direction: column;
+    padding: 2rem 2rem;
+    gap: 4rem;
+  }
+  .info-section {
+    width: 100%;
+    padding: 0rem;
+  }
+  .info-section p {
+    text-align: justify;
   }
 }
