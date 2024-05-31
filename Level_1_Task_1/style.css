@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  /* user-select: none; */
+}
+
+/*---- main color #363636 -----*/
+/* .tuatara {
+        '50': '#f6f6f6',
+        '100': '#e7e7e7',
+        '200': '#d1d1d1',
+        '300': '#b0b0b0',
+        '400': '#888888',
+        '500': '#6d6d6d',
+        '600': '#5d5d5d',
+        '700': '#4f4f4f',
+        '800': '#454545',
+        '900': '#363636',
+        '950': '#262626',
+    }, */
+
+/* font-family: "Noto Serif Display", serif; */
+
+/* ----------------- Firefox Browser -------------------- */
+::-moz-selection {
+  color: #6d6d6d;
+}
+
+::selection {
+  color: #d1d1d1;
+}
+
+html,
+body {
+  width: clamp(100% ,100vw, 1024px);
+  height: 100vh;
+  background-color: #fafaf8;
+}
+
+#navbar {
+  width: 100%;
+  height: fit-content;
+  padding: 2.5rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.nav-iconic-name {
+  font-family: "Orbitron", sans-serif;
+  color: #262626;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.nav-menu {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+}
+.active {
+  display: block !important;
+  color: #262626 !important;
+  font-size: 1.3rem !important;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.nav-links img {
+  display: none;
+  font-size: 0.9rem;
+  transition: all 1.5s ease linear;
+  -webkit-transition: all 1.5s ease linear;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #262626;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 1.5s ease linear;
+  -webkit-transition: all 1.5s ease linear;
+}
+.nav-menu a:hover {
+  color: #d1d1d1;
+}
+.navmenu-btn {
+  display: none;
+}
+.navmenu-btn img {
+  width: 30px;
+}
+
+/* ------------------------------------Home Page ------------------------------------------*/
+
+#home{
+  width: 100vw;
+  padding: 0rem 5rem;
+  /* background-color: #6d6d6d; */
+}
+#home h1{
+  font-family: "Noto Serif Display", serif;
+  line-height: 6rem;
+  /* background-color: aqua; */
+  letter-spacing: 0.3rem;
+  font-size: 7rem;
+  font-weight: 300;
+  color: #262626;
+  text-align:center;
+}
+#home span{
+  font-family: "Noto Serif Display", serif;
+}
+#home span img{
+  margin: 0px 1.5rem;
+  /* filter: drop-shadow(0 0.7rem 1rem #b0b0b0); */
+}
+#home p{
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+  color: #5d5d5d;
+  text-align: center;
+}
+#home p b{
+  font-weight: 900 !important;
+  color: #262626 !important;
+}
+/* .home-info-section{
+} */
+
+
+
+/* ----------------- Responsiveness Section -------------------- */
+@media only screen and (max-width: 1351px) {
+  .nav-iconic-name {
+    font-size: 0.8rem;
+  }
+  .nav-menu,
+  .nav-arrow {
+    display: none;
+  }
+  .navmenu-btn {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}
