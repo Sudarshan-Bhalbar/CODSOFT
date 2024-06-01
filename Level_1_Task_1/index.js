@@ -20,3 +20,19 @@ function handleOnClickNavbar(value) {
   console.log(value);
 }
 handleOnClickNavbar(0);
+function scrollbar() {
+  const element = document.querySelector("body");
+
+  element.addEventListener("scroll", function () {
+    const scrollTop = element.scrollTop;
+    const scrollLeft = element.scrollLeft;
+
+    if (scrollTop > 100) {
+      document.querySelector(".top-btn").style.display = "block";
+    }else{
+      document.querySelector(".top-btn").style.display = "none";
+    }
+  });
+}
+
+scrollbar();
