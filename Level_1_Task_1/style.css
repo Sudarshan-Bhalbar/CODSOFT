@@ -143,9 +143,12 @@ body {
 #home span {
   font-family: "Noto Serif Display", serif;
 }
-#home span img {
+#home span .img-home {
   margin: 0px 1.5rem;
-  /* filter: drop-shadow(0 0.7rem 1rem #b0b0b0); */
+  width: 80px;
+}
+#home span .img-home img{
+  object-fit: cover;
 }
 #home p {
   line-height: 4rem;
