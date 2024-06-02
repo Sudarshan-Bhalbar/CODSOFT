@@ -5,7 +5,6 @@ function handleOnClickNavbar(value) {
   let navImage = Array.prototype.slice.call(
     document.querySelectorAll(".nav-arrow")
   );
-  console.log(navImage)
   navlink.map((e,index) =>{
     if (value === index) {
       navlink[index].classList.add("active");
@@ -17,7 +16,6 @@ function handleOnClickNavbar(value) {
     }
   })
   
-  console.log(value);
 }
 handleOnClickNavbar(0);
 function scrollbar() {
