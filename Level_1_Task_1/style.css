@@ -352,6 +352,12 @@ body {
     justify-content: end;
     align-items: center;
   }
+  #navbar {
+    padding: 2.5rem 3rem;
+}
+  #home {
+    padding-top: 3rem;
+  }
   #home h1 {
     font-size: 2.5rem;
     line-height: 4rem;
@@ -415,7 +421,7 @@ body {
   margin-bottom: 4rem;
 }
 .project-section {
-    grid-template-rows: repeat(6, 630px);
+    grid-template-rows: repeat(5, 630px);
     grid-row-gap: 0rem ;
 }
 .div1 {
