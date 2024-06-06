@@ -39,15 +39,19 @@ function navMenu() {
   let btn = document.querySelector(".navmenu-btn");
   let navImagebtn = document.querySelector(".nav-opn-close-btn");
   let isOpen = false;
+  smallNavbar.style.height = "0px";
+
 
   btn.addEventListener("click", () => {
     if (isOpen) {
       smallNavbar.style.height = "0px";
       isOpen = false;
+      navImagebtn.style.width = "30px";
       navImagebtn.setAttribute("src", "./images/Hamburger Menu.png");
 
     } else {
       smallNavbar.style.height = "fit-content";
+      navImagebtn.style.width = "20px";
       navImagebtn.setAttribute("src", "./images/close.png");
       isOpen = true;
     }
