@@ -1,32 +1,29 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "bonnevarc";
   box-sizing: border-box;
 }
 html,
 body {
-  font-family: "bonnevarc";
+  background-color: #f9f9f9;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 #Navbar {
-  width: 100%;
+  width: 100vw;
   height: fit-content;
   padding: 2rem 5rem;
   display: flex;
-  justify-content: space-between;
-  align-items: start;
+  justify-content: start;
+  align-items: center;
   position: fixed;
 }
 .nav-logo {
   color: #f9f9f9;
   font-size: large;
   letter-spacing: 0.1rem;
-}
-.nav-logo,
-.nav-links {
-  width: 50%;
-  height: fit-content;
 }
 #Home {
   color: #f9f9f9;
@@ -48,8 +45,9 @@ body {
 }
 .navigation-info-div-Home {
   width: 100%;
-  height: 5rem;
-  padding: 0rem 5rem;
+  height: 8rem;
+  border-top: 2px solid #f9f9f9;
+  padding: 2rem 5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -59,7 +57,10 @@ body {
 .navigation-info-div-Home > h3 {
   padding: 1rem 0rem;
   font-size: large;
-  font-weight: 200;
+  font-weight: 400;
+  line-height: 1rem;
+  text-align: justify;
+  letter-spacing: 0.2rem;
 }
 .navigation-info-div-Home > div {
   width: 100%;
@@ -73,11 +74,156 @@ body {
   height: fit-content;
   text-decoration: none;
   border: 2px solid #f9f9f9;
-  padding: .5rem .5rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 50%;
 }
-.navigation-info-div-Home > p{
-    font-size: medium;
-    font-weight: 400;
-    text-transform: uppercase;
+.navigation-info-div-Home > p {
+  font-size: medium;
+  font-weight: 600;
+  line-height: 1.1rem;
+  text-align: left;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+#Home-2 {
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 5rem;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.6fr 0.5fr 0.5fr;
+  gap: 20px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "PLANE-1 TEXT-AREA"
+    "PLANE-1 PLANE-2"
+    "EMPTY_AREA PLANE-2";
+}
+
+.PLANE-1 {
+  grid-area: PLANE-1;
+  background-image: url("/assets/Model-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.PLANE-2 {
+  grid-area: PLANE-2;
+  background-image: url("/assets/Model-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.TEXT-AREA {
+  grid-area: TEXT-AREA;
+  background-color: #f9f9f9;
+}
+.TEXT-AREA > h2{
+  color: #292929;
+  text-align: end;
+  font-size: 8rem !important;
+  font-weight: 200 !important;
+}
+
+.EMPTY_AREA {
+  grid-area: EMPTY_AREA;
+  background-color: #f9f9f9;
+}
+#Slider{
+  width: 100%;
+  height: 100vh;
+}
+.Slider-navigation{
+  width: 100%;
+  height: fit-content;
+  padding: 5rem 5rem;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.Slider-navigation a{
+  width: 100%;
+  color: #bdbdbd;
+  /* background-color: aquamarine; */
+  text-decoration: none;
+  font-size: 3rem;
+  text-align: center;
+  padding: 0rem 2.5rem;
+  font-weight: 600;
+}
+.border{
+  border-left: 2px solid #bdbdbd;
+  border-right: 2px solid #bdbdbd;
+}
+.active{
+  color: #292929 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------- Responsiveness For Mobiles --------------------------------------- */
+
+@media only screen and (max-width: 400px) {
+  #Navbar {
+    width: 100vw;
+    height: fit-content;
+    padding: 2rem 0rem;
+    display: block;
+    text-align: center;
+  }
+  #Home > h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+  }
+  .navigation-info-div-Home {
+    height: fit-content;
+    padding: 2rem 1rem;
+  }
+  .navigation-info-div-Home {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 2rem;
+    border-top: 0px;
+  }
+  .navigation-info-div-Home > p {
+    grid-column: 1 / span 3;
+  }
+  .navigation-info-div-Home > div {
+    grid-area: 3;
+    justify-content: end;
+  }
+  .navigation-info-div-Home > h3 {
+    grid-area: 3;
+  }
+  #Home-2 {
+    padding: 2rem 1rem;
+  }
+  .container {
+    grid-template-areas:
+      "TEXT-AREA TEXT-AREA"
+      "PLANE-1 PLANE-1"
+      "PLANE-2 PLANE-2";
+    gap: 20px 0px;
+  }
 }
