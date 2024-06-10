@@ -106,7 +106,7 @@ body {
 
 .PLANE-1 {
   grid-area: PLANE-1;
-  background-image: url("../assets/Model-1.jpg");
+  background-image: url("../assets/Model-10.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,8 +114,8 @@ body {
 
 .PLANE-2 {
   grid-area: PLANE-2;
-  background-image: url("../assets/Model-2.jpg");
-  background-position: center;
+  background-image: url("../assets/Model-11.jpg");
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -124,7 +124,7 @@ body {
   grid-area: TEXT-AREA;
   background-color: #f9f9f9;
 }
-.TEXT-AREA > h2{
+.TEXT-AREA > h2 {
   color: #292929;
   text-align: end;
   font-size: 8rem !important;
@@ -135,13 +135,14 @@ body {
   grid-area: EMPTY_AREA;
   background-color: #f9f9f9;
 }
-#Description{
+#Description {
   width: 100%;
   height: 30vh;
   padding: 2rem 5rem;
   text-align: center;
+  margin-bottom: 10rem;
 }
-#Description > h4{
+#Description > h4 {
   font-size: 2rem;
   color: #656565;
   font-weight: 600;
@@ -150,27 +151,122 @@ body {
   text-transform: uppercase;
 }
 #Description > h4 > .img {
-  padding: .4rem 6rem;
+  padding: 0.4rem 6rem;
   border-radius: 50px;
-  margin: 0px .5rem;
+  margin: 0px 0.5rem;
   background-size: cover;
   background-position: center;
 }
-#Description > h4 > .img-1{
+#Description > h4 > .img-1 {
   background-image: url("../assets/Model-3.jpg");
 }
-#Description > h4 > .img-2{
+#Description > h4 > .img-2 {
   background-image: url("../assets/Model-4.jpg");
 }
-#Description > h4 > .company{
+#Description > h4 > .company {
   color: #292929;
   font-weight: 900;
 }
+#New-Arrivals {
+  width: 100%;
+  height: 200vh;
+  padding: 3rem 5rem;
+  margin-bottom: 5rem;
+}
+.New-Arrivals-title > h1 {
+  font-size: 8rem;
+  font-weight: 500;
+  color: #292929;
+}
+.New-Arrivals-title > h1 > span {
+  width: fit-content;
+  height: fit-content;
+  padding: 0rem 1rem;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px 3px #292929;
+}
+.New-arrivals-models {
+  width: 100%;
+  height: 70%;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "MODEL-1 MODEL-1 MODEL-2 MODEL-3"
+    "MODEL-1 MODEL-1 MODEL-6 MODEL-6"
+    "MODEL-4 MODEL-5 MODEL-6 MODEL-6";
+}
+.border {
+  border-radius: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.MODEL-3 {
+  grid-area: MODEL-3;
+  background-image: url("../assets/Model-7.jpg");
+}
 
+.MODEL-6 {
+  grid-area: MODEL-6;
+  background-image: url("../assets/Model-5.jpg");
+  background-position: top !important;
+}
 
+.MODEL-4 {
+  grid-area: MODEL-4;
+  background-image: url("../assets/Model-9.jpg");
+}
 
+.MODEL-5 {
+  grid-area: MODEL-5;
+  background-image: url("../assets/Model-10.jpg");
+}
 
+.MODEL-1 {
+  grid-area: MODEL-1;
+  background-image: url("../assets/Model-6.jpg");
+  background-position: top !important;
+}
+
+.MODEL-2 {
+  grid-area: MODEL-2;
+  background-image: url("../assets/Model-8.jpg");
+}
+#Shop-From-Us{
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 5rem;
+}
+#Shop-From-Us > h1{
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 300;
+}
+.div-section{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  width: 30%;
+  height: 400px;
+  background-color: #d1d1d1;
+}
+.box > div{
+  width: fit-content;
+  padding: 2rem 2rem;
+}
+.box > div > img{
+  width: 50px;
+}
 
 
 /* -------------------------------------------- Responsiveness For Mobiles --------------------------------------- */
@@ -214,20 +310,39 @@ body {
   }
   .container {
     grid-template-areas:
-      "TEXT-AREA TEXT-AREA"
       "PLANE-1 PLANE-1"
+      "TEXT-AREA TEXT-AREA"
       "PLANE-2 PLANE-2";
     gap: 20px 0px;
   }
   #Description {
     padding: 0rem 1rem;
     text-wrap: balance;
-}
-#Description > h4 {
+    margin-bottom: 0rem;
+  }
+  #Description > h4 {
     font-size: 1rem;
     line-height: 2.3rem;
-}
-#Description > h4 > .img {
-    padding: .4rem 3rem;
+  }
+  #Description > h4 > .img {
+    padding: 0.4rem 3rem;
+  }
+  #New-Arrivals {
+    padding: 3rem 1rem;
+    margin-bottom: 0rem;
+  }
+  .New-Arrivals-title > h1 {
+    font-size: 5rem;
+  }
+  .New-Arrivals-title > h1 > span {
+    padding: 5px;
+    display: flex;
+  }
+  .New-arrivals-models {
+    grid-template-rows: 200px 200px 200px;
+    gap: 5px 5px;
+  }
+  #New-Arrivals {
+    height: fit-content;
 }
 }
