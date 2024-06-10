@@ -29,7 +29,7 @@ body {
   color: #f9f9f9;
   width: 100vw;
   height: 100vh;
-  background-image: url("/assets/Home-img.jpg");
+  background-image: url("../assets/Home-img.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -106,7 +106,7 @@ body {
 
 .PLANE-1 {
   grid-area: PLANE-1;
-  background-image: url("/assets/Model-1.jpg");
+  background-image: url("../assets/Model-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,7 +114,7 @@ body {
 
 .PLANE-2 {
   grid-area: PLANE-2;
-  background-image: url("/assets/Model-2.jpg");
+  background-image: url("../assets/Model-2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,44 +135,37 @@ body {
   grid-area: EMPTY_AREA;
   background-color: #f9f9f9;
 }
-#Slider{
+#Description{
   width: 100%;
-  height: 100vh;
-}
-.Slider-navigation{
-  width: 100%;
-  height: fit-content;
-  padding: 5rem 5rem;
-  /* display: flex; */
-  /* justify-content: center; */
-}
-.Slider-navigation a{
-  width: 100%;
-  color: #bdbdbd;
-  /* background-color: aquamarine; */
-  text-decoration: none;
-  font-size: 3rem;
+  height: 30vh;
+  padding: 2rem 5rem;
   text-align: center;
-  padding: 0rem 2.5rem;
+}
+#Description > h4{
+  font-size: 2rem;
+  color: #656565;
   font-weight: 600;
+  letter-spacing: 0rem;
+  line-height: 3.5rem;
+  text-transform: uppercase;
 }
-.border{
-  border-left: 2px solid #bdbdbd;
-  border-right: 2px solid #bdbdbd;
+#Description > h4 > .img {
+  padding: .4rem 6rem;
+  border-radius: 50px;
+  margin: 0px .5rem;
+  background-size: cover;
+  background-position: center;
 }
-.active{
-  color: #292929 !important;
+#Description > h4 > .img-1{
+  background-image: url("../assets/Model-3.jpg");
 }
-
-
-
-
-
-
-
-
-
-
+#Description > h4 > .img-2{
+  background-image: url("../assets/Model-4.jpg");
+}
+#Description > h4 > .company{
+  color: #292929;
+  font-weight: 900;
+}
 
 
 
@@ -226,4 +219,15 @@ body {
       "PLANE-2 PLANE-2";
     gap: 20px 0px;
   }
+  #Description {
+    padding: 0rem 1rem;
+    text-wrap: balance;
+}
+#Description > h4 {
+    font-size: 1rem;
+    line-height: 2.3rem;
+}
+#Description > h4 > .img {
+    padding: .4rem 3rem;
+}
 }
