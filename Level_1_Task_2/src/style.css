@@ -110,7 +110,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: fadeIn 5s; 
 }
+
+
 
 .PLANE-2 {
   grid-area: PLANE-2;
@@ -118,6 +121,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: fadeIn 5s; 
 }
 
 .TEXT-AREA {
@@ -159,9 +163,11 @@ body {
 }
 #Description > h4 > .img-1 {
   background-image: url("../assets/Model-3.jpg");
+  animation: fadeIn 5s; 
 }
 #Description > h4 > .img-2 {
   background-image: url("../assets/Model-4.jpg");
+  animation: fadeIn 5s; 
 }
 #Description > h4 > .company {
   color: #292929;
@@ -209,45 +215,51 @@ body {
 .MODEL-3 {
   grid-area: MODEL-3;
   background-image: url("../assets/Model-7.jpg");
+  animation: fadeIn 5s; 
 }
 
 .MODEL-6 {
   grid-area: MODEL-6;
   background-image: url("../assets/Model-5.jpg");
   background-position: top !important;
+  animation: fadeIn 5s; 
 }
 
 .MODEL-4 {
   grid-area: MODEL-4;
   background-image: url("../assets/Model-9.jpg");
+  animation: fadeIn 5s; 
 }
 
 .MODEL-5 {
   grid-area: MODEL-5;
   background-image: url("../assets/Model-10.jpg");
+  animation: fadeIn 5s; 
 }
 
 .MODEL-1 {
   grid-area: MODEL-1;
   background-image: url("../assets/Model-6.jpg");
   background-position: top !important;
+  animation: fadeIn 5s; 
 }
 
 .MODEL-2 {
   grid-area: MODEL-2;
   background-image: url("../assets/Model-8.jpg");
+  animation: fadeIn 5s; 
 }
-#Shop-From-Us{
+#Shop-From-Us {
   width: 100%;
   height: 100vh;
   padding: 2rem 5rem;
 }
-#Shop-From-Us > h1{
+#Shop-From-Us > h1 {
   text-align: center;
   font-size: 8rem;
   font-weight: 300;
 }
-.div-section{
+.div-section {
   width: 100%;
   height: 100%;
   display: flex;
@@ -255,23 +267,94 @@ body {
   justify-content: center;
   align-items: center;
 }
-.box{
+.box {
   width: 30%;
-  height: 400px;
+  padding: 2rem 2rem;
+  height: fit-content;
   background-color: #d1d1d1;
 }
-.box > div{
+.box > div {
   width: fit-content;
-  padding: 2rem 2rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
 }
-.box > div > img{
+.box > div > img {
   width: 50px;
+}
+.box > h1 {
+  color: #292929;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  text-align: left;
+}
+.box > p {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #656565;
+  letter-spacing: 0.1rem;
+  text-align: left;
+  margin-top: 2rem;
+}
+#Footer {
+  width: 100%;
+  height: fit-content;
+  margin-top: 4rem;
+}
+#Footer h1 {
+  font-size: 8.5rem;
+  text-align: center;
+  letter-spacing: 2rem;
+}
+.footer {
+  width: 100%;
+  padding: 1rem 6.5rem;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer img {
+  width: 50px;
+}
+.footer h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* --------------------------------------------- Animation Key Frames--------------------------------------------- */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Define the in-view class */
+.in-view {
+  opacity: 1;
+}
+
+/* Use the :not() pseudo-class to apply the animation only when the item is in view */
+.item {
+  opacity: 0;
+  transition: opacity 0.7s ease-in;
+}
+
+.item:not(.in-view) {
+  opacity: 0;
+}
+
+/* Add the in-view class when the item is in view */
+.item.in-view {
+  opacity: 1;
 }
 
 
 /* -------------------------------------------- Responsiveness For Mobiles --------------------------------------- */
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   #Navbar {
     width: 100vw;
     height: fit-content;
@@ -344,5 +427,143 @@ body {
   }
   #New-Arrivals {
     height: fit-content;
+  }
+  #Shop-From-Us {
+    padding: 2rem 1rem;
+    height: fit-content;
+  }
+  #Shop-From-Us > h1 {
+    text-align: right;
+    font-size: 5rem;
+    margin-bottom: 5rem;
+  }
+  .div-section {
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+  }
+  .box {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+  #Footer {
+    margin-top: 1rem;
+  }
+  #Footer h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+  }
+  .footer {
+    padding: 0.5rem 1.5rem;
+  }
 }
+
+@media only screen and ((min-width: 500px) and (max-width: 900px)) {
+  #Navbar {
+    width: 100vw;
+    height: fit-content;
+    padding: 2rem 0rem;
+    display: block;
+    text-align: center;
+  }
+  #Home > h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+  }
+  .navigation-info-div-Home {
+    height: fit-content;
+    padding: 2rem 7rem;
+  }
+  .navigation-info-div-Home {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 2rem;
+    border-top: 0px;
+  }
+  .navigation-info-div-Home > p {
+    grid-column: 1 / span 3;
+  }
+  .navigation-info-div-Home > div {
+    grid-area: 3;
+    justify-content: end;
+  }
+  .navigation-info-div-Home > h3 {
+    grid-area: 3;
+  }
+  #Home-2 {
+    padding: 2rem 1rem;
+  }
+  .container {
+    grid-template-rows: 1.6fr 0.5fr 1.5fr;
+    grid-template-areas:
+      "PLANE-1 PLANE-1"
+      "TEXT-AREA TEXT-AREA"
+      "PLANE-2 PLANE-2";
+    gap: 20px 0px;
+  }
+  #Description {
+    padding: 0rem 1rem;
+    text-wrap: balance;
+    margin-bottom: 0rem;
+  }
+  #Description > h4 {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
+  #Description > h4 > .img {
+    padding: 0.4rem 3rem;
+  }
+  #New-Arrivals {
+    padding: 3rem 1rem;
+    margin-bottom: 0rem;
+  }
+  .New-Arrivals-title > h1 {
+    font-size: 6rem;
+  }
+  .New-Arrivals-title > h1 > span {
+    padding: 5px;
+    display: flex;
+  }
+  .New-arrivals-models {
+    grid-template-rows: 200px 200px 200px;
+    gap: 5px 5px;
+  }
+  #New-Arrivals {
+    height: fit-content;
+  }
+  #Shop-From-Us {
+    padding: 2rem 1rem;
+  }
+  #Shop-From-Us > h1 {
+    text-align: center;
+    font-size: 6rem;
+    margin-bottom: 5rem;
+  }
+  .div-section {
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+  }
+  .box {
+    width: 70%;
+    padding: 1rem 1rem;
+  }
+  #Footer {
+    margin-top: 5rem;
+  }
+  #Footer h1 {
+    font-size: 4.5rem;
+    letter-spacing: 1.5rem;
+  }
+  .footer {
+    padding: 1.5rem 3.5rem;
+  }
 }
