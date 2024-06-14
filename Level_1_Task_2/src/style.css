@@ -1,3 +1,7 @@
+@font-face {
+  font-family: bonnevarc;
+  src: url(../Fonts/bonnevarc/Bonnevarc.ttf);
+}
 * {
   margin: 0;
   padding: 0;
