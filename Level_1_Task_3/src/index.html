@@ -1,0 +1,130 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="Calulator">
+      <div class="circle"></div>
+      <div class="container">
+        <div class="Text_Area box display" id="textarea">
+          <input type="text" name="display" id="display" />
+        </div>
+        <input type="button" value="AC" class="AC box btn" onclick="clearDisplay()" />
+        <input type="button" value="Del" class="Clear box btn" onclick="deleteLastChar()" />
+        <input
+          type="button"
+          value="/"
+          class="Divide box btn"
+          onclick="appendChar('/')"
+        />
+        <input
+          type="button"
+          value="%"
+          class="percent box btn"
+          onclick="appendChar('%')"
+        />
+        <input
+          type="button"
+          value="7"
+          class="n7 box btn"
+          onclick="appendChar('7')"
+        />
+        <input
+          type="button"
+          value="8"
+          class="n8 box btn"
+          onclick="appendChar('8')"
+        />
+        <input
+          type="button"
+          value="9"
+          class="n9 box btn"
+          onclick="appendChar('9')"
+        />
+        <input
+          type="button"
+          value="*"
+          class="multiple box btn"
+          onclick="appendChar('*')"
+        />
+        <input
+          type="button"
+          value="4"
+          class="n4 box btn"
+          onclick="appendChar('4')"
+        />
+        <input
+          type="button"
+          value="5"
+          class="n5 box btn"
+          onclick="appendChar('5')"
+        />
+        <input
+          type="button"
+          value="6"
+          class="n6 box btn"
+          onclick="appendChar('6')"
+        />
+        <input
+          type="button"
+          value="-"
+          class="substract box btn"
+          onclick="appendChar('-')"
+        />
+        <input
+          type="button"
+          value="1"
+          class="n1 box btn"
+          onclick="appendChar('1')"
+        />
+        <input
+          type="button"
+          value="2"
+          class="n2 box btn"
+          onclick="appendChar('2')"
+        />
+        <input
+          type="button"
+          value="3"
+          class="n3 box btn"
+          onclick="appendChar('3')"
+        />
+        <input
+          type="button"
+          value="+"
+          class="add box btn"
+          onclick="appendChar('+')"
+        />
+        <input
+          type="button"
+          value="00"
+          class="n00 box btn"
+          onclick="appendChar('00')"
+        />
+        <input
+          type="button"
+          value="0"
+          class="n0 box btn"
+          onclick="appendChar('0')"
+        />
+        <input
+          type="button"
+          value="."
+          class="dot box btn"
+          onclick="appendChar('.')"
+        />
+        <input
+          type="button"
+          value="="
+          class="equal box btn"
+          onclick="calculate()"
+        />
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

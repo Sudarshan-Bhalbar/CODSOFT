@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #bbc2d5;
+}
+
+#Calulator {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vh;
+  height: 90vh;
+  background-color: #636792;
+}
+.box {
+  border: none;
+  background-color: transparent;
+}
+.btn {
+  border-radius: 8px;
+  background-color: #bbc2d5;
+  box-shadow: 5px 3px 10px #6f76a1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2e2e3d;
+  font-family: monospace;
+}
+.container {
+  padding: 1em;
+  width: 25%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Text_Area Text_Area Text_Area Text_Area"
+    "Text_Area Text_Area Text_Area Text_Area"
+    "AC percent Clear Divide"
+    "n7 n8 n9 multiple"
+    "n4 n5 n6 substract"
+    "n1 n2 n3 add"
+    "n00 n0 \. equal";
+  backdrop-filter: blur(6px) saturate(200%);
+  -webkit-backdrop-filter: blur(6px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.Text_Area {
+  grid-area: Text_Area;
+}
+.Text_Area input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  text-align: right;
+  font-size: 2.5rem;
+  line-height: 2rem;
+
+  font-family: monospace;
+}
+
+.AC {
+  grid-area: AC;
+}
+
+.Clear {
+  grid-area: Clear;
+}
+
+.Divide {
+  grid-area: Divide;
+}
+
+.percent {
+  grid-area: percent;
+}
+
+.n7 {
+  grid-area: n7;
+}
+
+.n8 {
+  grid-area: n8;
+}
+
+.n9 {
+  grid-area: n9;
+}
+
+.multiple {
+  grid-area: multiple;
+}
+
+.n4 {
+  grid-area: n4;
+}
+
+.n5 {
+  grid-area: n5;
+}
+
+.n6 {
+  grid-area: n6;
+}
+
+.substract {
+  grid-area: substract;
+}
+
+.n1 {
+  grid-area: n1;
+}
+
+.n2 {
+  grid-area: n2;
+}
+
+.n3 {
+  grid-area: n3;
+}
+
+.add {
+  grid-area: add;
+}
+
+.n00 {
+  grid-area: n00;
+}
+
+.n0 {
+  grid-area: n0;
+}
+
+.\. {
+  grid-area: \.;
+}
+
+.equal {
+  grid-area: equal;
+}
+
+@media (max-width: 500px) {
+  .circle {
+    display: none;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .circle {
+    display: none;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  .btn {
+    font-size: 2.2rem;
+  }
+}
