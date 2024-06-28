@@ -1,21 +1,21 @@
-import Header from "../header/page"
+import { currentUser } from "@clerk/nextjs/server";
+import Header from "../header/page";
 
-
-const commonLayout = ({ childern }) => {
+async function CommonLayout({ childern }) {
+  const user = await currentUser();
   return (
     <div className="mx-auto max-w-7xl p-6 lg:px-8">
-        {/* Header Component */}
-            <Header/>
-        {/* Header Component */}
+      {/* Header Component */}
+      <Header user={JSON.parse(JSON.stringify(user))} />
+      {/* Header Component */}
 
-
-        {/* Main Component */}
-            <main className="w-screen h-full flex justify-center items-center pt-6">{ childern }</main>
-        {/* Main Component */}
-
-
+      {/* Main Component */}
+      <main className="w-screen h-full flex justify-center items-center pt-6">
+        {childern}
+      </main>
+      {/* Main Component */}
     </div>
-  )
+  );
 }
 
-export default commonLayout;
+export default CommonLayout;
