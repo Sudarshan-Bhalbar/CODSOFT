@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className} w-full h-full overflow-x-hidden`}>
           <Suspense fallback={<Loading />}>
             <CommonLayout childern={children} />
           </Suspense>

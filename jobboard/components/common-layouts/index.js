@@ -8,9 +8,8 @@ async function CommonLayout({ childern }) {
       {/* Header Component */}
       <Header user={JSON.parse(JSON.stringify(user))} />
       {/* Header Component */}
-
       {/* Main Component */}
-      <main className="w-screen h-full flex justify-center items-center pt-6">
+      <main className="h-full flex justify-start items-center pt-6">
         {childern}
       </main>
       {/* Main Component */}

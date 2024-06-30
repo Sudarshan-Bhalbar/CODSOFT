@@ -1,5 +1,9 @@
-const onBoard = () => {
-  return <div>This is a onBoard Page</div>;
+import OnBoard from '../../components/on-board/page'
+
+const onBoardPage = () => {
+  return (
+    <OnBoard/>
+  );
 };
 
-export default onBoard;
+export default onBoardPage;
