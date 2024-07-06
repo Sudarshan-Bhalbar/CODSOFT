@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
-const Header = ({ user }) => {
+const Header = ({ user, profileInfo }) => {
   const menuItems = [
     {
       label: "Home",
@@ -30,7 +30,7 @@ const Header = ({ user }) => {
     {
       label: "Activity",
       path: "/activity",
-      show: user,
+      show: profileInfo?.role === "candidate",
     },
     {
       label: "Membership",
@@ -64,7 +64,7 @@ const Header = ({ user }) => {
           afterSignOutUrl="/"
           appearance={{
             elements: {
-              userButtonTrigger:"focus:shadow-none",
+              userButtonTrigger: "focus:shadow-none",
               userButtonAvatarBox: "w-10 h-10",
               userButtonOuterIdentifier:
                 "font-semibold text-slate-600 capitalize text-lg mr-2 text-start",

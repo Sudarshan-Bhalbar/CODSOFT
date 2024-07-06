@@ -13,7 +13,7 @@ function CommonForm({
   handleFileChange,
 }) {
   // component Types -----> Textarea | input | radio Input | Select
-  console.log(formControl)
+  console.log(formControl);
   function renderInputByComponentType(getCurrentControls) {
     let content = "null";
 
@@ -42,17 +42,19 @@ function CommonForm({
         break;
 
       case "file":
-        <Label
-          htmlFor={getCurrentControls.name}
-          className="flex bg-transparent items-center px-3 py-3 mx-auto mt-6 text-center border-2 border-dashed rounded-md cursor-pointer"
-        >
-          <h3>{getCurrentControls.label}</h3>
-          <Input
-            onChange={handleFileChange}
-            id={getCurrentControls.name}
-            type="file"
-          />
-        </Label>;
+        content = (
+          <Label
+            for={getCurrentControls.name}
+            className="flex gap-5 bg-gray-100 dark:bg-black items-center px-3 py-3 mx-auto mt-6 text-center border-2 border-dashed rounded-lg cursor-pointer"
+          >
+            <h2>{getCurrentControls.label}</h2>
+            <Input
+              onChange={handleFileChange}
+              id={getCurrentControls.name}
+              type="file"
+            />
+          </Label>
+        );
         break;
 
       default:
