@@ -141,7 +141,7 @@ export const postNewJobFormControls = [
     name: "companyName",
     placeholder: "Company Name",
     componentType: "input",
-    disabled: true
+    disabled: true,
   },
   {
     label: "Title",
@@ -182,4 +182,5 @@ export const initialpostNewJobFormData = {
   location: "",
   experience: "",
   skills: "",
+  recruiterId: "",
 };

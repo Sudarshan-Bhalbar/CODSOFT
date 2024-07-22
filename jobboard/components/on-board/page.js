@@ -1,6 +1,6 @@
 "use client";
 import CommonForm from "../common-form/index";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createProfile } from "../../actions";
 import {
   Tabs,
@@ -15,6 +15,13 @@ import {
   intialCandidateFormData,
 } from "../../app/utils";
 import { useUser } from "@clerk/nextjs";
+import { createClient } from "@supabase/supabase-js";
+
+// Super Base Connect and data fetching
+const supabaseClient = createClient(
+  "https://sryiamjazprkcnlsyixl.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyeWlhbWphenBya2NubHN5aXhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjAzMzQ1MDYsImV4cCI6MjAzNTkxMDUwNn0.h5LKQu3HN0tJ0C2kxhPjmh4cUYfyQNSEPQjIQwzuBH4"
+);
 
 function OnBoard() {
   const [currentTab, setCurrentTab] = useState("candidate");
@@ -24,13 +31,44 @@ function OnBoard() {
   const [candidateFormData, SetCandidateFormData] = useState(
     intialCandidateFormData
   );
-
+  const [file, setfile] = useState(null);
   const currentUser = useUser();
   const { user } = currentUser;
 
   function handleTabChange(value) {
     setCurrentTab(value);
   }
+
+  //  Super Base File Handling
+  function handleFileChange(event) {
+    event.preventDefault();
+    setfile(event.target.files[0]);
+  }
+
+  // File Uplaoding To SupaBase
+
+  async function handleFileUploadToSupabase() {
+    const { data, error } = await supabaseClient.storage
+      .from("Job-Portal")
+      .upload(`/public/${file.name}`, file, {
+        cacheControl: "3600",
+        upsert: false,
+      });
+
+    console.log(data, error);
+    if (data) {
+      SetCandidateFormData({
+        ...candidateFormData,
+        resume: data.path,
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (file) {
+      handleFileUploadToSupabase();
+    }
+  }, [file]);
 
   function handleRecuiterFormValid() {
     return (
@@ -41,14 +79,27 @@ function OnBoard() {
     );
   }
 
+  function handleCandidateFormValid() {
+    return  Object.keys(candidateFormData).every(key=> candidateFormData[key].trim() !== "")
+  }
+
   async function createProfileAction() {
-    const data = {
-      recruiterInfo: recruiterFormData,
-      role: "recruiter",
-      isPremiumUser: false,
-      userId: user?.id,
-      email: user?.primaryEmailAddress?.emailAddress,
-    };
+    const data =
+      currentTab === "candidate"
+        ? {
+            candidateInfo: candidateFormData,
+            role: "candidate",
+            isPremiumUser: false,
+            userId: user?.id,
+            email: user?.primaryEmailAddress?.emailAddress,
+          }
+        : {
+            recruiterInfo: recruiterFormData,
+            role: "recruiter",
+            isPremiumUser: false,
+            userId: user?.id,
+            email: user?.primaryEmailAddress?.emailAddress,
+          };
 
     await createProfile(data, "/onboard");
   }
@@ -73,6 +124,9 @@ function OnBoard() {
             buttonText={"Onboard as Candidate"}
             formData={candidateFormData}
             setFormData={SetCandidateFormData}
+            handleFileChange={handleFileChange}
+            isBtnDisabled={!handleCandidateFormValid()}
+            action={createProfileAction}
           />
         </TabsContent>
         <TabsContent value="recruiter">

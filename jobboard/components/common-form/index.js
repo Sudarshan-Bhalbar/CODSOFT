@@ -12,8 +12,6 @@ function CommonForm({
   setFormData,
   handleFileChange,
 }) {
-  // component Types -----> Textarea | input | radio Input | Select
-  console.log(formControl);
   function renderInputByComponentType(getCurrentControls) {
     let content = "null";
 
@@ -89,7 +87,7 @@ function CommonForm({
         <Button
           disabled={isBtnDisabled}
           type={btnType || "submit"}
-          className="disabled:opacity-65 h-11 flex justify-center items-center px-5"
+          className="disabled:opacity-65 h-11 flex justify-center items-center px-5 text-gray-800 border-2 bg-slate-100 border-slate-300 shadow-lg shadow-slate-200 hover:bg-slate-300 hover:shadow-slate-300"
         >
           {buttonText}
         </Button>

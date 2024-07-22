@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
+
 const Header = ({ user, profileInfo }) => {
   const menuItems = [
     {
@@ -43,6 +44,8 @@ const Header = ({ user, profileInfo }) => {
       show: user,
     },
   ];
+
+
   return (
     <header className="flex  justify-between h-16 w-full shrink-0 items-center">
       <Link href="/">
@@ -53,7 +56,7 @@ const Header = ({ user, profileInfo }) => {
           menuItems.show ? (
             <Link
               href={menuItems.path}
-              className="group inline-flex h-9 w-max items-center rounded-md bg-white px-4 py-2 text-sm font-medium"
+              className="group inline-flex h-9 w-max items-center rounded-md bg-white dark:bg-transparent px-4 py-2 text-sm font-medium"
             >
               {menuItems.label}
             </Link>
@@ -72,6 +75,7 @@ const Header = ({ user, profileInfo }) => {
           }}
         />
       </nav>
+
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" className="border-0 lg:hidden">
@@ -89,7 +93,6 @@ const Header = ({ user, profileInfo }) => {
             <div className="w-full h-full flex px-10 justify-center gap-5 flex-col">
               <UserButton
                 afterSignOutUrl="/"
-                showName
                 appearance={{
                   elements: {
                     userButtonAvatarBox: "w-14 h-14",

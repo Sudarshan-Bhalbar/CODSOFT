@@ -7,7 +7,7 @@ export default async function Home() {
 
   const profileInfo = null;
 
-  if (user && !profileInfo?._id) redirect('/onboard');
+  // if (user && !profileInfo?._id) redirect('/');
 
   return <section>Main Content</section>;
 }

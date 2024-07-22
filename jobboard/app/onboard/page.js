@@ -16,7 +16,7 @@ const onBoardPage = async () => {
     if (profileInfo?.role === "recruiter" && !profileInfo.isPremiumUser) {
       redirect("/membership");
     } else {
-      redirect("/");
+      redirect("/onboard");
     }
   } else {
     return <OnBoard />;

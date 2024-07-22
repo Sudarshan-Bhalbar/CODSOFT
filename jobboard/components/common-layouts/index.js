@@ -9,11 +9,15 @@ async function CommonLayout({ childern }) {
   return (
     <div className="mx-auto max-w-7xl p-6 lg:px-8">
       {/* Header Component */}
-      <Header profileInfo={profileInfo} user={JSON.parse(JSON.stringify(user))} />
+      <Header
+        profileInfo={profileInfo}
+        user={JSON.parse(JSON.stringify(user))}
+      />
       {/* Header Component */}
       {/* Main Component */}
       <main className="h-full w-full flex justify-center items-center pt-6">
-        {childern}
+       
+          {childern}
       </main>
       {/* Main Component */}
     </div>
